@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 @Table
 public class Bids {
 
+    // Generate the ID automatically
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -17,6 +18,8 @@ public class Bids {
     @Column
     private double maxAutoBidAmount;
 
+
+    // Getters and setters
     public int getBidId() {
         return bidId;
     }

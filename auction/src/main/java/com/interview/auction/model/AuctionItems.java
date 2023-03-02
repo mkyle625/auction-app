@@ -7,6 +7,7 @@ import java.util.Map;
 @Entity
 @Table
 public class AuctionItems {
+    // Genereate the auction ID, since each is unique
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
@@ -22,8 +23,12 @@ public class AuctionItems {
     @Column
     private String bidderName;
 
+    // Marked as transient, don't want this to be part of the database
+    // This is used for the proper output formatting when returning the model
     @Transient
     private Item item;
+
+    // Getters and setters
 
     public int getAuctionId() {
         return auctionId;
